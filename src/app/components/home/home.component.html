@@ -1,4 +1,8 @@
-<div class="container">
+<div *ngIf="loading" class="alert alert-primary text-center" role="alert">
+    Loading subreddits...
+</div>
+
+<div *ngIf="!loading" class="container">
     <h1 class="my-4">List subreddits</h1>
 
     <div class="row">
