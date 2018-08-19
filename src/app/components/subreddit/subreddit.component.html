@@ -7,5 +7,7 @@
         <p class="card-text" [innerHtml]="reddit.data.public_description_html"></p>
         <hr>
         <p>{{ reddit.data.submit_text }}</p>
+
+        <button class="btn btn-outline-primary" [routerLink]="['/search']">Back</button>
     </div>
 </div>
