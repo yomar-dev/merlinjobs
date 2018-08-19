@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RedditsService } from '../../services/reddits.service';
 
@@ -7,7 +7,7 @@ import { RedditsService } from '../../services/reddits.service';
     templateUrl: './subreddit.component.html',
     styles: []
 })
-export class SubredditComponent implements OnInit {
+export class SubredditComponent {
 
     loading: boolean;
     reddit: any;
@@ -15,14 +15,16 @@ export class SubredditComponent implements OnInit {
     constructor(private _activatedRoute: ActivatedRoute, private _reddit: RedditsService) {
         this.loading = true;
         this._activatedRoute.params.subscribe(params => {
-            this._reddit.searchSubreddit(params['url']).subscribe((data: any) => {
+            const URL = params['url'];
+            this._reddit.searchSubreddit(URL).subscribe((data: any) => {
                 this.reddit = data[0];
+                /**
+                const ID = this.reddit.data.id;
+                this._reddit.getComments(URL, ID).subscribe((info: any) => {
+                    console.log(info);
+                });*/
                 this.loading = false;
             });
         });
     }
-
-    ngOnInit() {
-    }
-
 }
