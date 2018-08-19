@@ -9,7 +9,7 @@
         <div *ngFor="let reddit of subreddits" class="col-lg-3 col-md-4 col-sm-6 portfolio-item mb-5">
             <div class="card h-100">
                 <a href="#">
-                    <img class="card-img-top" [src]="reddit.data.icon_img" [alt]="reddit.data.display_name" width="100%">
+                    <img class="card-img-top" [src]="reddit.data.icon_img | noimage" [alt]="reddit.data.display_name" width="100%">
                 </a>
                 <div class="card-body">
                     <h4 class="card-title">
