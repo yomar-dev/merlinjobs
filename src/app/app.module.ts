@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
+import { SubredditComponent } from './components/subreddit/subreddit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     NavbarComponent,
     HomeComponent,
     SearchComponent,
-    NoimagePipe
+    NoimagePipe,
+    SubredditComponent
   ],
   imports: [
     BrowserModule,
