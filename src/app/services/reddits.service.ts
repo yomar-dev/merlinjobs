@@ -12,4 +12,8 @@ export class RedditsService {
     getSubreddits() {
         return this.http.get('https://www.reddit.com/reddits.json?limit=100&raw_json=1').pipe(map ((info: any) => info.data.children ));
     }
+
+    searchSubreddits(name) {
+        return this.http.get(`https://www.reddit.com/subreddits/search.json?q=${name}&raw_json=1`).pipe(map ((info: any) => info.data.children ));
+    }
 }
