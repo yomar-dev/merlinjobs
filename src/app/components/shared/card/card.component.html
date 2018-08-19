@@ -1,0 +1,15 @@
+<div class="row">
+    <div *ngFor="let item of items" class="col-lg-3 col-md-4 col-sm-6 portfolio-item mb-5">
+        <div class="card h-100">
+            <a (click)="showSubreddit(item.data.url)" class="link">
+                <img class="card-img-top" [src]="item.data.icon_img | noimage" [alt]="item.data.display_name" width="100%">
+            </a>
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a (click)="showSubreddit(item.data.url)" class="link">{{ item.data.display_name }}</a>
+                </h4>
+                <p [innerHtml]="item.data.public_description_html" class="card-text"></p>
+            </div>
+        </div>
+    </div>
+</div>

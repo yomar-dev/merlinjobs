@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { SubredditComponent } from './components/subreddit/subreddit.component';
+import { CardComponent } from './components/shared/card/card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SubredditComponent } from './components/subreddit/subreddit.component';
     HomeComponent,
     SearchComponent,
     NoimagePipe,
-    SubredditComponent
+    SubredditComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
