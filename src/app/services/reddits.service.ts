@@ -14,6 +14,12 @@ export class RedditsService {
     }
 
     searchSubreddits(name) {
-        return this.http.get(`https://www.reddit.com/subreddits/search.json?q=${name}&raw_json=1`).pipe(map ((info: any) => info.data.children ));
+        return this.http.get(`https://www.reddit.com/subreddits/search.json?q=${name}&raw_json=1`)
+            .pipe(map ((info: any) => info.data.children ));
+    }
+
+    searchSubreddit(name) {
+        return this.http.get(`https://www.reddit.com/subreddits/search.json?q=${name}&limit=1&raw_json=1`)
+            .pipe(map ((info: any) => info.data.children ));
     }
 }
