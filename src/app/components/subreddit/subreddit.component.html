@@ -1,3 +1,11 @@
-<p>
-  subreddit works!
-</p>
+<div *ngIf="!loading" class="card mb-5">
+    <div class="card-header">
+        <img [src]="reddit.data.banner_img | noimage" [alt]="reddit.data.display_name" class="img-banner">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{ reddit.data.title }}</h5>
+        <p class="card-text" [innerHtml]="reddit.data.public_description_html"></p>
+        <hr>
+        <p>{{ reddit.data.submit_text }}</p>
+    </div>
+</div>

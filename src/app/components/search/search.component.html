@@ -13,12 +13,12 @@
     <div class="row">
         <div *ngFor="let reddit of subreddits" class="col-lg-3 col-md-4 col-sm-6 portfolio-item mb-5">
             <div class="card h-100">
-                <a href="#">
+                <a (click)="showSubreddit(reddit.data.url)" class="link">
                     <img class="card-img-top" [src]="reddit.data.icon_img | noimage" [alt]="reddit.data.display_name" width="100%">
                 </a>
                 <div class="card-body">
                     <h4 class="card-title">
-                        <a href="#">{{ reddit.data.display_name }}</a>
+                        <a (click)="showSubreddit(reddit.data.url)" class="link">{{ reddit.data.display_name }}</a>
                     </h4>
                     <p [innerHtml]="reddit.data.public_description_html" class="card-text"></p>
                 </div>
