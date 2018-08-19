@@ -1,3 +1,7 @@
+<div *ngIf="loading" class="alert alert-primary text-center" role="alert">
+    Loading data...
+</div>
+
 <div *ngIf="!loading" class="card mb-5">
     <div class="card-header">
         <img [src]="reddit.data.banner_img | noimage" [alt]="reddit.data.display_name" class="img-banner">
