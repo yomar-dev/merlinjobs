@@ -1,21 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RedditsService } from '../../services/reddits.service';
-import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-search',
     templateUrl: './search.component.html',
     styles: []
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
 
     loading: boolean;
     subreddits: any[] = [];
 
-    constructor(private _reddits: RedditsService, private router: Router) { }
-
-    ngOnInit() {
-    }
+    constructor(private _reddits: RedditsService) { }
 
     search(name) {
         this.loading = true;
@@ -25,11 +21,4 @@ export class SearchComponent implements OnInit {
                 this.loading = false;
             });
     }
-
-    showSubreddit(url) {
-        const arrName = url.split('/');
-        const name = arrName[2].toLowerCase();
-        this.router.navigate(['/subreddit', name]);
-    }
-
 }
