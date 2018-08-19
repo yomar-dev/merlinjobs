@@ -10,15 +10,12 @@ export class HomeComponent implements OnInit {
 
     loading: boolean;
     subreddits: any[] = [];
-    test = '';
 
     constructor(private _reddits: RedditsService) {
         this.loading = true;
-        this.test = '<h5>Hello World!!</h5>';
         this._reddits.getSubreddits()
             .subscribe((data: any) => {
                 this.subreddits = data;
-                console.log('Subreddits >>> ', data);
                 this.loading = false;
             });
     }
