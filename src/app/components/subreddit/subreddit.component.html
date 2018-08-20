@@ -15,3 +15,17 @@
         <button class="btn btn-outline-primary" [routerLink]="['/home']">Go to home</button>
     </div>
 </div>
+
+<div *ngIf="!loading">
+    <h3>Popular comments</h3>
+    <hr>
+
+    <div *ngFor="let comment of comments" class="alert alert-info" role="alert">
+        <h5 class="alert-heading">Author:
+            <small>{{ comment.data.author }}</small>
+        </h5>
+        <hr>
+
+        <p>{{ comment.data.body }}</p>
+    </div>
+</div>

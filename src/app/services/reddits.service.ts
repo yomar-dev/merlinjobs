@@ -36,13 +36,14 @@ export class RedditsService {
             .pipe(map ((info: any) => info.data.children ));
     }
 
-    /*
-    getComments(name, id) {
-        // https://www.reddit.com/r/art/comments/98jwwx.json
-        return this.http.get(`https://www.reddit.com/r/${name}/comments/${id}.json`)
+    /**
+     * Get comments of selected subreddit.
+     * @param name: Name subreddit.
+     */
+    getComments(name) {
+        return this.http.get(`https://www.reddit.com/r/${name}/comments/.json?limit=5`)
             .pipe(map ((info: any) => {
-                return info;
+                return info.data.children;
             }));
     }
-    */
 }

@@ -11,6 +11,7 @@ export class SubredditComponent {
 
     loading: boolean;
     reddit: any;
+    comments: any[] = [];
 
     constructor(private _activatedRoute: ActivatedRoute, private _reddit: RedditsService) {
         this.loading = true;
@@ -18,11 +19,9 @@ export class SubredditComponent {
             const URL = params['url'];
             this._reddit.searchSubreddit(URL).subscribe((data: any) => {
                 this.reddit = data[0];
-                /**
-                const ID = this.reddit.data.id;
-                this._reddit.getComments(URL, ID).subscribe((info: any) => {
-                    console.log(info);
-                });*/
+                this._reddit.getComments(URL).subscribe((info: any) => {
+                    this.comments = info;
+                });
                 this.loading = false;
             });
         });
